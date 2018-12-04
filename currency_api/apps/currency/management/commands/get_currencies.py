@@ -11,8 +11,6 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         response = requests.get('https://openexchangerates.org/api/currencies.json')
         data = response.json()
-        for currency in Currency.objects.all():
-            currency.delete()
         for key, value in data.items():
             currency = Currency(code=key, name=value)
             currency.save()
