@@ -28,7 +28,8 @@ class EuroExchangeRate(StatusModel, TimeStampedModel):
     date = models.DateField()
 
     class Meta:
-        verbose_name_plural = "EuroExchangeRates"
+        verbose_name_plural = "Euro Exchange Rates"
+        verbose_name = "Euro Exchange Rate"
 
     def __str__(self):
         return '{} - {}'.format(self.currency.code, self.date)
