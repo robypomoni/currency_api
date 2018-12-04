@@ -2,6 +2,7 @@ from django.db import models
 from model_utils.models import StatusModel, TimeStampedModel
 from model_utils import Choices
 
+
 class Currency (models.Model):
     """
     Model to store currency
