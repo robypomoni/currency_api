@@ -20,9 +20,6 @@ class CurrencyListView(generics.ListAPIView):
     serializer_class = serializers.CurrencyListSerializer
 
 
-class EuroExchangeRate(generics.ListAPIView):
+class EuroExchangeRateListView(generics.ListAPIView):
     queryset = EuroExchangeRate.objects.all()
     serializer_class = serializers.EuroExchangeRateListSerializer
-
-
-
