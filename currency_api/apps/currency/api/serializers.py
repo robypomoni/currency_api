@@ -12,4 +12,4 @@ class CurrencyListSerializer(serializers.ModelSerializer):
 class EuroExchangeRateListSerializer(serializers.ModelSerializer):
     class Meta:
         model = EuroExchangeRate
-        fields = '__all__'
+        fields = ('rate', 'date', 'currency')
