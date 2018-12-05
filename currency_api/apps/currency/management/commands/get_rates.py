@@ -13,6 +13,15 @@ class Command(BaseCommand):
         response = requests.get('https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml')
         tree = ET.fromstring(response.text)
         for date in tree[2]:
+            currency = Currency.objects.get(code='EUR')
+            rate = EuroExchangeRate(
+                date=date.attrib['time'],
+                currency=currency,
+                rate=1
+            )
+            rate.save()
+            message = 'created {} - EUR'.format(date.attrib['time'])
+            print(message)
             for item in date:
                 try:
                     currency = Currency.objects.get(code=item.attrib['currency'])
