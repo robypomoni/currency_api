@@ -33,7 +33,6 @@ class EuroExchangeRateListView(generics.ListAPIView):
 class Convert(APIView):
 
     def get(self, request, *args, **kwargs):
-        import ipdb; ipdb.set_trace()
         date = self.kwargs['reference_date']
         src_currency = self.kwargs['src_currency']
         dest_currency = self.kwargs['dest_currency']
