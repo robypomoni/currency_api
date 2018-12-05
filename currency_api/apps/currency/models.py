@@ -13,6 +13,7 @@ class Currency (models.Model):
 
     class Meta:
         verbose_name_plural = "Currencies"
+        ordering = ['code']
 
     def __str__(self):
         return '{} - {}'.format(self.code, self.name)
@@ -31,6 +32,7 @@ class EuroExchangeRate(StatusModel, TimeStampedModel):
         verbose_name_plural = "Euro Exchange Rates"
         verbose_name = "Euro Exchange Rate"
         get_latest_by = 'date'
+        ordering = ['-date', 'currency']
 
     def __str__(self):
         return '{} - {}'.format(self.currency.code, self.date)
