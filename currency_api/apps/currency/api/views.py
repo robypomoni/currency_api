@@ -16,7 +16,7 @@ def api_root(request, format=None):
     return Response({
         'currency': reverse('api_currency:currency_list', request=request, format=format),
         'rate': reverse('api_currency:rate_list', request=request, format=format),
-        #'convert': reverse('api_currency:convert', request=request, format=format)
+        'convert': reverse('api_currency:convert_instructions', request=request, format=format)
     })
 
 
@@ -30,7 +30,15 @@ class EuroExchangeRateListView(generics.ListAPIView):
     serializer_class = serializers.EuroExchangeRateListSerializer
 
 
-class Convert(APIView):
+class ConvertInstructionsView(APIView):
+    """
+    Usage Instructions
+    """
+    def get(self, request, *args, **kwargs):
+        return Response('OK')
+
+
+class ConvertView(APIView):
 
     def get(self, request, *args, **kwargs):
         date = self.kwargs['reference_date']
