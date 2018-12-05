@@ -30,6 +30,7 @@ class EuroExchangeRate(StatusModel, TimeStampedModel):
     class Meta:
         verbose_name_plural = "Euro Exchange Rates"
         verbose_name = "Euro Exchange Rate"
+        get_latest_by = 'date'
 
     def __str__(self):
         return '{} - {}'.format(self.currency.code, self.date)
