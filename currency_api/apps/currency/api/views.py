@@ -58,7 +58,17 @@ class ConvertView(APIView):
             except EuroExchangeRate.DoesNotExist:
                 raise NotFound(detail='There is no currency with code {}'.format(dest_currency))
             result = amount / src_rate.rate * dest_rate.rate
+            rate = src_rate.rate / dest_rate.rate
         else:
             raise NotFound(detail='There are no rates for date {}'.format(date))
-        #TODO create full response (with serializer?)
-        return Response({'amount': result})
+
+        obj = {
+            'rate_date': date,
+            'source_currency': src_currency,
+            'source_amount': amount,
+            'destination_currency': dest_currency,
+            'amount': result,
+            'rate': rate
+        }
+        serializer = serializers.ConvertSerializer(obj)
+        return Response(serializer.data)
