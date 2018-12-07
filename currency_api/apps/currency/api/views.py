@@ -57,8 +57,8 @@ class ConvertView(APIView):
                 src_rate = rates.get(currency=src_currency)
             except EuroExchangeRate.DoesNotExist:
                 raise NotFound(detail='There is no currency with code {}'.format(dest_currency))
-            result = amount / src_rate.rate * dest_rate.rate
-            rate = src_rate.rate / dest_rate.rate
+            result = src_rate.exchange(dest_rate, amount)
+            rate = src_rate.exchange_rate(dest_rate)
         else:
             raise NotFound(detail='There are no rates for date {}'.format(date))
 

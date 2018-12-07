@@ -1,3 +1,4 @@
+from django.core.exceptions import ObjectDoesNotExist
 from django.db import models
 from model_utils.models import StatusModel, TimeStampedModel
 from model_utils import Choices
@@ -36,3 +37,11 @@ class EuroExchangeRate(StatusModel, TimeStampedModel):
 
     def __str__(self):
         return '{} - {}'.format(self.currency.code, self.date)
+
+    def exchange(self, rate, amount):
+        result = amount / self.rate * rate.rate
+        return result
+
+    def exchange_rate(self, rate):
+        rate = self.rate / rate.rate
+        return rate
