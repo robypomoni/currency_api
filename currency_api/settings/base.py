@@ -10,11 +10,10 @@ sys.path.insert(0, root('apps'))
 
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'CHANGE THIS!!!'
+SECRET_KEY = '^h_o+q_u2@y-0%n*zjv&2w_24tg1eu&j%*1e=nmr@uod-kqar@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-IN_TESTING = sys.argv[1:2] == ['test']
 
 ALLOWED_HOSTS = []
 
@@ -27,11 +26,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'currency'
+    'rest_framework'
+
 ]
 
-PROJECT_APPS = []
+PROJECT_APPS = ['currency']
 
 INSTALLED_APPS += PROJECT_APPS
 
@@ -54,14 +53,11 @@ WSGI_APPLICATION = 'currency_api.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'currency_api',
-        'USER': 'postgres',
-        'PASSWORD': '',
-        'HOST': '',  # Empty for localhost through domain sockets or '127.0.0.1' for localhost through TCP.
-        'PORT': '',  # Set to empty string for default.
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'currency_api.db',
     }
 }
+
 
 # Internationalization
 
@@ -128,16 +124,20 @@ AUTH_PASSWORD_VALIDATORS = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 10
+    'PAGE_SIZE': 20
 }
 
 # .local.py overrides all the common settings.
-try:
-    from .local import *  # noqa
-except ImportError:
-    pass
+DJANGOENV =os.environ.get('DJANGOENV', None)
 
+if DJANGOENV == 'development':
+    try:
+        from .local import *  # noqa
+    except ImportError:
+        pass
 
-# importing test settings file if necessary
-if IN_TESTING:
-    from .testing import *  # noqa
+if DJANGOENV == 'production':
+    try:
+        from .production import *  # noqa
+    except ImportError:
+        pass
