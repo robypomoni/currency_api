@@ -8,6 +8,6 @@ RUN pip install --upgrade pip
 
 RUN pip install pipenv && pipenv install --system
 
-RUN mkdir -p /apicurrency
-COPY . /apicurrency
-WORKDIR /apicurrency
+RUN mkdir -p /www
+COPY . /www
+WORKDIR /www
