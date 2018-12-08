@@ -17,7 +17,7 @@ class Command(BaseCommand):
             last_rate = EuroExchangeRate.objects.latest()
             last_rate_date = last_rate.date
         except EuroExchangeRate.DoesNotExist:
-            last_rate_date = datetime.date(2018, 1, 1,)
+            last_rate_date = datetime.date(2018, 12, 1,)
         for date in tree[2]:
             date_object = datetime.datetime.strptime(date.attrib['time'], "%Y-%m-%d").date()
             if date_object > last_rate_date:

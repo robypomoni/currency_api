@@ -15,7 +15,7 @@ SECRET_KEY = '^h_o+q_u2@y-0%n*zjv&2w_24tg1eu&j%*1e=nmr@uod-kqar@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'web']
 
 # Application definition
 
@@ -75,13 +75,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 
 # Additional locations of static files
 
-STATICFILES_DIRS = (
-    root('assets'),
-)
 
 TEMPLATES = [
     {

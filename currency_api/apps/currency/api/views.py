@@ -32,7 +32,14 @@ class EuroExchangeRateListView(generics.ListAPIView):
 
 class ConvertInstructionsView(APIView):
     """
-    Usage Instructions
+    Usage Instructions:
+    To convert currency make a GET HTTP request following this format:
+    /api/currency/convert/"source_currency"/"dest_currency"/"date"/"amount/
+    where currencies are expressed with ISO codes, date in in format YYYY-MM-GG
+    and amount is a number with up to 4 decimal places. For example:
+
+    /api/currency/convert/USD/EUR/2018-12-06/120.25
+
     """
     def get(self, request, *args, **kwargs):
         return Response('OK')
