@@ -56,8 +56,6 @@ venv
 *.iws
 .idea/
 
-currency_api/settings/local.py
-currency_api/settings/production.py
 
 # collect static output directory
 currency_api/assets/
