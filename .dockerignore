@@ -1,0 +1,2 @@
+#exclude sqlite db from container
+*.db
