@@ -8,6 +8,6 @@ RUN pip install --upgrade pip
 
 RUN pip install pipenv && pipenv install --system
 
-RUN mkdir -p /www
-COPY . /www
-WORKDIR /www
+RUN mkdir -p /app_data
+COPY . /app_data
+WORKDIR /app_data
