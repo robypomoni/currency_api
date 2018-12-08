@@ -8,8 +8,10 @@ django-model-utils = "*"
 Django = "*"
 djangorestframework = "*"
 requests = "*"
+gunicorn = "*"
 
 [dev-packages]
+ipdb = "*"
 
 [requires]
 python_version = "3.6"
