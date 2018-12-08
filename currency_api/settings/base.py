@@ -30,7 +30,7 @@ INSTALLED_APPS = [
 
 ]
 
-PROJECT_APPS = ['currency']
+PROJECT_APPS = ['currency.apps.CurrencyConfig']
 
 INSTALLED_APPS += PROJECT_APPS
 
