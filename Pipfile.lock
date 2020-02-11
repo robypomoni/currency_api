@@ -39,11 +39,11 @@
         },
         "django": {
             "hashes": [
-                "sha256:4f2c913303be4f874015993420bf0bd8fd2097a9c88e6b49c6a92f9bdd3fb13a",
-                "sha256:8c3575f81e11390893860d97e1e0154c47512f180ea55bd84ce8fa69ba8051ca"
+                "sha256:2f1ba1db8648484dd5c238fb62504777b7ad090c81c5f1fd8d5eb5ec21b5f283",
+                "sha256:c91c91a7ad6ef67a874a4f76f58ba534f9208412692a840e1d125eb5c279cb0a"
             ],
             "index": "pypi",
-            "version": "==3.0.2"
+            "version": "==3.0.3"
         },
         "django-model-utils": {
             "hashes": [
@@ -107,14 +107,6 @@
         }
     },
     "develop": {
-        "appnope": {
-            "hashes": [
-                "sha256:5b26757dc6f79a3b7dc9fab95359328d5747fcb2409d331ea66d0272b90ab2a0",
-                "sha256:8b995ffe925347a2138d7ac0fe77155e4311a0ea6d6da4f5128fe4b3cbe5ed71"
-            ],
-            "markers": "sys_platform == 'darwin'",
-            "version": "==0.1.0"
-        },
         "backcall": {
             "hashes": [
                 "sha256:38ecd85be2c1e78f77fd91700c76e14667dc21e2713b63876c0eb901196e01e4",
@@ -138,10 +130,10 @@
         },
         "ipython": {
             "hashes": [
-                "sha256:0f4bcf18293fb666df8511feec0403bdb7e061a5842ea6e88a3177b0ceb34ead",
-                "sha256:387686dd7fc9caf29d2fddcf3116c4b07a11d9025701d220c589a430b0171d8a"
+                "sha256:d9459e7237e2e5858738ff9c3e26504b79899b58a6d49e574d352493d80684c6",
+                "sha256:f6689108b1734501d3b59c84427259fd5ac5141afe2e846cfa8598eb811886c9"
             ],
-            "version": "==7.11.1"
+            "version": "==7.12.0"
         },
         "ipython-genutils": {
             "hashes": [
@@ -159,10 +151,10 @@
         },
         "parso": {
             "hashes": [
-                "sha256:1376bdc8cb81377ca481976933773295218a2df47d3e1182ba76d372b1acb128",
-                "sha256:597f36de5102a8db05ffdf7ecdc761838b86565a4a111604c6e78beaedf1b045"
+                "sha256:56b2105a80e9c4df49de85e125feb6be69f49920e121406f15e7acde6c9dfc57",
+                "sha256:951af01f61e6dccd04159042a0706a31ad437864ec6e25d0d7a96a9fbb9b0095"
             ],
-            "version": "==0.6.0"
+            "version": "==0.6.1"
         },
         "pexpect": {
             "hashes": [
